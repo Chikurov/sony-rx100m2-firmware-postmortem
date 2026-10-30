@@ -1,0 +1,13 @@
+*.exe
+*.dat
+*.bin
+*.img
+*.tpzl
+*.zip
+fw_extract/
+fw_tar/
+rootfs/
+systemfs/
+ghidra_out/
+tools/
+COMMITMENT.md
