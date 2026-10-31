@@ -8,7 +8,7 @@
 > [!WARNING]
 > Камера после кастомной сборки **не загружается**. Это разбор ошибок,
 > а не инструкция. Перед повторением прочитайте
-> [ПРАВИЛА.md](reports/ПРАВИЛА.md) и чек-лист ниже.
+> [RULES.md](reports/RULES.md) и чек-лист ниже.
 
 **EN:** Reverse engineering of the Sony DSC-RX100M2 v1.10 firmware
 (UFU/FDAT/TPZL, AXFS, UXC, DSP) and a postmortem of a failed custom
@@ -51,9 +51,9 @@ data/     карта функций DSP (23 088), 256 сигнатур, инве
 | DSP `av-cam.bin` | база `0xC3440000`, 23 088 функций, 118 параметров | [docs/05](docs/05-dsp.md) |
 | Art-effect | `Start_Art_Effect → 0xC3915CE0 → callback 0xC391A5CC` | [docs/05](docs/05-dsp.md) |
 
-Краткая сводка — [ИТОГИ.md](reports/ИТОГИ.md). Полный отчёт —
-[ОТЧЁТ_О_РАБОТЕ.md](reports/ОТЧЁТ_О_РАБОТЕ.md). Журнал фактов —
-[НАХОДКИ.md](reports/НАХОДКИ.md).
+Краткая сводка — [SUMMARY.md](reports/SUMMARY.md). Полный отчёт —
+[REPORT.md](reports/REPORT.md). Журнал фактов —
+[FINDINGS.md](reports/FINDINGS.md).
 
 ## Почему не сработало
 
