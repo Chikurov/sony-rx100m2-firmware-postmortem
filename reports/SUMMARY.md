@@ -54,3 +54,15 @@
 
 `tools/axfs_extract.py`, `tools/verify_tpzl.py`, `tools/lzpt.py`, `tools/pack_lzpt.py`,
 `tools/build_fw.py`, `ghidra_out/avcam_funcs.tsv`, `ghidra_out/dsp_signatures.txt`.
+
+
+## Финальный статус (исследование завершено)
+
+- Документы: `docs/00`–`docs/34` (включая архитектурные диаграммы).
+- Инструменты: `tools/axfs_extract.py`, `verify_tpzl.py`, `lzpt.py`,
+  `pack_lzpt.py`, `build_fw.py`, `repack_test.py`, `make_test_fdat.py`,
+  `link_ko.py`, `kmod_imports.py`, `reloc_apply.py`, `rtti_scan.py`.
+- Данные: инвентари с хешами, `kallsyms.txt` (16 421 символ),
+  `kmod_imports.tsv`, `kmod_deps.tsv`, `binaries.tsv`.
+- Не закрыто: UXC-парсер (косвенные вызовы), `uxd`-кодек,
+  `sabin`/`ssboot` payload, полный код DSP, `libObj`.

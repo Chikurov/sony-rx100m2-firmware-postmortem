@@ -10,6 +10,8 @@
 > а не инструкция. Перед повторением прочитайте
 > [RULES.md](reports/RULES.md) и чек-лист ниже.
 
+**Статус:** исследование завершено; не закрыты UXC-парсер, `uxd`-кодек и проприетарные payload (см. [docs/08](docs/08-open-questions.md)).
+
 **EN:** Reverse engineering of the Sony DSC-RX100M2 v1.10 firmware
 (UFU/FDAT/TPZL, AXFS, UXC, DSP) and a postmortem of a failed custom
 build that bricked the camera.
