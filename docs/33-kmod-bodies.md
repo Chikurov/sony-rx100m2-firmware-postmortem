@@ -72,3 +72,23 @@ void upm_senser_wbi_drop(undefined1 *param_1)
 Большинство автоматически выбранных функций — тривиальные
 `*_init`/`*_exit`; для содержательного разбора нужен выбор по
 назначению (ioctl/probe), а не по суффиксу.
+
+
+## Выборка по назначению (upm/unidrv2/liro)
+
+Декомпилированы: `backup_ioctl/probe/read/write`, `ulogio_file_read/write`,
+`ulogio_debug_display_read/write`, `k_mss_add_request_nr`,
+`k_mss_del_request_nr`, `k_mss_find_min_request`, `k_mss_rew_all_request_nr`,
+`k_upm_Backup_read_mss`, `k_upm_write_file`, `liro_os_request_irq`,
+`liro_proc_delay_write`.
+
+Наблюдения:
+
+- `backup_ioctl()` возвращает 0 — заглушка (реальная работа в другом слое).
+- `k_mss_add_request_nr(req)`: берёт мьютекс (`func_0xc01ecd14` — mutex_lock),
+  обходит список `iRambf00a28c+0x28`, при отсутствии выделяет узел
+  **0xD0 байт** (`func_0xc00aa324` / `func_0xc0167074` — kmalloc-подобные),
+  зануляет 0xD0 байт и вставляет в список; при ошибке — `-1`.
+
+Это подтверждает: модули работают через стандартные ядерные примитивы,
+и после линковки их тела читаемы.
