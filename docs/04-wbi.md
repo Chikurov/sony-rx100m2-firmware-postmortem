@@ -70,6 +70,21 @@
 То есть WBI — это **битовый LZ/словарный формат**, а не «VM команд».
 Строка `WBI1~` в ядре — отладочный тег рядом с этим кодом.
 
+## Updater: `ud_wbi_drop.elf` (ФАКТ)
+
+В теле апдейтера есть отдельная утилита `ud_wbi_drop.elf` (6 032 Б).
+Её строки:
+
+- `Usage: ud_wbi_drop.elf filename`
+- `[UD_WBI_DROP] AnalyzePartitionSettingFile() error`
+- `[UD_WBI_DROP] wbi size is zero. skip wbi_drop()`
+- `[UD_WBI_DROP] error : wbi size is too small. size = $d`
+- `[UD_WBI_DROP] %s wbi_drop`
+- `[UD_WBI_DROP] wbi_drop() error`
+
+То есть при обновлении раздел WBI **стирается** («drop»), если его размер
+из `partinf.conf` больше нуля; при нуле — пропускается.
+
 ## Статус
 
 Семантика полей и формат данных — **НЕ РАЗОБРАНЫ**. Раздел помечен в
