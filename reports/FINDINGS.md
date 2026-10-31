@@ -131,3 +131,18 @@
 - `orb-server`: HTTP JSON-RPC Camera Remote API (методы ActTakePicture,
   StartLiveview и др.).
 - Host-модель `0x11E1C` в `libObj`/`libmpr` не найдена — передаётся иначе.
+
+
+## Раунд 4: драйверы, библиотеки, ресурсы
+
+- 39 модулей ядра: символы сохранены; `unidrv1.ko` — OneNAND с таблицей
+  разделов (512-байтный заголовок, ≤31 записей по 16 Б, кратность 512).
+- `upm.ko`: `upm_senser_wbi_drop` — обёртка статуса; `k_dfs_do_full_nand`
+  отключает DFS (`onenand_set_dfs_mode(0)`).
+- `liro.ko`: WBI фигурирует в пути resume/suspend → вероятно, механизм
+  пробуждения, а не формат файла.
+- `libmpr.so` — медиа-слой (`AviMMgrIf`, `Mount`, `GetStillData`).
+- `orb-server`: 5 265 символов, WebApi-аддон с IPC и конвертацией ID.
+- UXC: 195 файлов, инвентарь с числом строк/цветов.
+- `EQ/*.bin`: BK2, 549 745 Б, регионы различаются 75 байтами.
+- `images/*.uxc`: магия `uxd\x07` — отдельный вариант ресурса.
