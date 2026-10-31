@@ -32,4 +32,4 @@
 - `Camera::HAPI::ShareDMMforClone`
 - `Camera::HAPI::SoftFocus_Main`
 
-Полный список: `data/dsp_signatures.txt`.
+Полный список: `ghidra_out/dsp_signatures.txt`.
