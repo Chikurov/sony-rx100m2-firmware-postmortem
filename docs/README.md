@@ -12,6 +12,9 @@
 | [07-userland.md](07-userland.md) | пользовательские бинарники и библиотеки |
 | [08-open-questions.md](08-open-questions.md) | что осталось неразобранным |
 | [09-dsp-api.md](09-dsp-api.md) | инвентарь 256 сигнатур DSP |
+| [10-artifacts.md](10-artifacts.md) | SHA-256 ключевых артефактов |
+| [11-inventory.md](11-inventory.md) | опознание прошивки, разделы, инвентари |
 
 Инструменты: `tools/axfs_extract.py`, `tools/verify_tpzl.py`, `tools/lzpt.py`,
-`tools/pack_lzpt.py`, `tools/build_fw.py`. Данные: `data/`.
+`tools/pack_lzpt.py`, `tools/build_fw.py`, `tools/repack_test.py`,
+`tools/make_test_fdat.py`. Данные: `data/` (инвентари, карта функций, сигнатуры).
