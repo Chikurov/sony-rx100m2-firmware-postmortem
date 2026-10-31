@@ -30,6 +30,23 @@ StopIntervalStillRec StopLiveview StopMovieRec
   собирается из частей).
 - Транспорт — `libmpr`/`libNetCommon`.
 
+## Внутренняя структура (ФАКТ: символы не удалены)
+
+Символов функций: **5 265**. Видны классы:
+
+- `WebApiAddonUipc` — IPC-клиент: `sendMsgToServer`, `recvMsg`,
+  `setEvtParamId`, `finalizeClient`;
+- `WebApiAddonUtils` — преобразование ID: `convIdToString`,
+  `convStringToId`, `convIdToInteger`, таблицы
+  `getParamConvIdStringTbl`, `getParamConvIdIntegerTbl`,
+  `getMethodParameterResultTypes`, `getParamTypeRangeForReceiveEvent`.
+
+То есть `orb-server` — это **аддон WebApi**, который по IPC общается с
+сервером и конвертирует строковые ID методов/параметров в целые по
+таблицам.
+
+JSON-поля: `result`, `error`, `statusCode`, `jsonizer`.
+
 ## Ограничения
 
 Порты, SSDP-обнаружение и точные URL не подтверждены: строк нет.
