@@ -94,6 +94,18 @@
   `onenand_set_dfs_mode(0)` — DFS отключается на время полной операции
   с NAND.
 
+## `liro.ko` и WBI (ФАКТ + гипотеза)
+
+Строки `liro.ko`: `[LIRO]: liro resume`, `[LIRO]: liro resume (WBI)`,
+`liro resume error ...`, `LIRO: resume error(kthread_suspend)`,
+`bind task_resume to cpu%d`, `wait for liroapp resume`.
+Символы: `liro_resume`, `liro_suspend`, `thread_resume`, `proc_suspend`.
+
+То есть WBI фигурирует в **пути выхода из сна/возобновления**, а не в
+файловом формате. Гипотеза: WBI = «Wakeup By Interrupt» (или подобный
+источник пробуждения), а раздел `nflasha5` — служебный для этого
+механизма. Требует подтверждения.
+
 ## Статус
 
 Семантика полей и формат данных — **НЕ РАЗОБРАНЫ**. Раздел помечен в
