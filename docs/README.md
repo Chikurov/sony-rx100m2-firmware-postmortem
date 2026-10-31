@@ -14,6 +14,7 @@
 | [09-dsp-api.md](09-dsp-api.md) | инвентарь 256 сигнатур DSP |
 | [10-artifacts.md](10-artifacts.md) | SHA-256 ключевых артефактов |
 | [11-inventory.md](11-inventory.md) | опознание прошивки, разделы, инвентари |
+| [12-pitfalls.md](12-pitfalls.md) | грабли инцидента и проверки перед прошивкой |
 
 Инструменты: `tools/axfs_extract.py`, `tools/verify_tpzl.py`, `tools/lzpt.py`,
 `tools/pack_lzpt.py`, `tools/build_fw.py`, `tools/repack_test.py`,
