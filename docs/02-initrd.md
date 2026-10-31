@@ -74,7 +74,7 @@ value[i] = p0[i] | p1[i]<<8 | p2[i]<<16 | p3[i]<<24
 
 ## Инструмент
 
-`axfs_extract.py` — парсер и распаковщик (`python3 axfs_extract.py
+`axfs_extract.py` — парсер и распаковщик (`python3 tools/axfs_extract.py
 initrd.img outdir`).
 
 ## Ограничения

@@ -13,5 +13,5 @@
 | [08-open-questions.md](08-open-questions.md) | что осталось неразобранным |
 | [09-dsp-api.md](09-dsp-api.md) | инвентарь 256 сигнатур DSP |
 
-Инструменты: `axfs_extract.py`, `verify_tpzl.py`, `lzpt.py`,
-`pack_lzpt.py`, `build_fw.py`.
+Инструменты: `tools/axfs_extract.py`, `tools/verify_tpzl.py`, `tools/lzpt.py`,
+`tools/pack_lzpt.py`, `tools/build_fw.py`. Данные: `data/`.
