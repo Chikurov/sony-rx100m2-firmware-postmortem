@@ -44,3 +44,31 @@
 | `usbg_sen.ko` | 57 | `fops_te_open`, `fops_se_open`, `fops_ioctl`, `usbg_sen_console_write`, `usbg_ldisc_buf_read` |
 | `usbg_stillimage.ko` | 65 | `sicd_event_open`, `sicd_core_open`, `sicd_event_write`, `sicd_data_read`, `sicd_data_ioctl` |
 | `usbg_storage.ko` | 222 | `storage_open`, `storage_ioctl`, `bdio_init`, `storage_read`, `storage_write` |
+
+
+## Декомпиляция ключевых функций (пример)
+
+Для `upm`, `unidrv2`, `liro` слинкованные образы импортированы в Ghidra
+с картой символов (`.syms`), функции переименованы, ключевые
+`*_init`/`*_exit`/`*_drop`/`*_write` декомпилированы.
+
+Пример — `upm_senser_wbi_drop`:
+
+```c
+void upm_senser_wbi_drop(undefined1 *param_1)
+{
+  uVar1 = func_0xc0042cbc();          // wbi_drop() в ядре
+  param_1[0x13] = uVar1 >> 24;
+  param_1[1] = 1; *param_1 = 8;
+  *(u32*)(param_1+8) = 0; *(u32*)(param_1+0xc) = 4;
+  param_1[0x11] = uVar1 >> 8; param_1[0x12] = uVar1 >> 16;
+  param_1[0x10] = uVar1;
+}
+```
+
+Внешний вызов разрешился в **`0xC0042CBC`** — это `wbi_drop` в ядре
+(по kallsyms `0xC0042CC4`), то есть линковка работает.
+
+Большинство автоматически выбранных функций — тривиальные
+`*_init`/`*_exit`; для содержательного разбора нужен выбор по
+назначению (ioctl/probe), а не по суффиксу.
