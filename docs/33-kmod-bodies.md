@@ -92,3 +92,17 @@ void upm_senser_wbi_drop(undefined1 *param_1)
 
 Это подтверждает: модули работают через стандартные ядерные примитивы,
 и после линковки их тела читаемы.
+
+
+## Декомпилировано по модулям (расширение)
+
+- `hdmi` — 8 функций, `ms_drv` — 8, `mcmn_drv` — 5, `dmm` — 1,
+  `stream` — 1 (плюс предыдущие `upm`/`unidrv2`/`liro`).
+- `ms_drv`: `jet_alw_msd_send_start`, `jet_alw_pre_read_completed`,
+  `jet_alw_pre_read_throw_away`, `jet_read_repeat`, `jet_write_repeat`,
+  `jet_cnl_send_data` — конечный автомат обмена Memory Stick.
+- `stream_ioctl`: проверяет `magic == 'x'` и `DAT_bf00010c`
+  (ioctl-номер), затем копирует данные; иначе `-EINVAL` (0xFFFFFFEA).
+- `cnl_tester_ioctl` — тестовый канал Memory Stick.
+
+Всего в `ghidra_out/` — 41 декомпилированная функция модулей.
