@@ -28,6 +28,10 @@ build that bricked the camera.
 Инвентари файлов с хешами — [docs/11-inventory.md](docs/11-inventory.md),
 `data/inventory/`.
 
+## Зачем это
+
+История и мотивация — [docs/35-why.md](docs/35-why.md).
+
 ## Структура
 
 ```
