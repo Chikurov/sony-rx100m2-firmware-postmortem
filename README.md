@@ -16,13 +16,24 @@ build that bricked the camera.
 
 ---
 
+## Опознание прошивки
+
+- Устройство: **Sony DSC-RX100M2** (CXD4132), прошивка **1.10**
+- Пакет: `Update_DSCRX100M2V110.exe` (110 469 120 Б)
+- SHA-256: `0621fe4cce53c80497fbae3647ed6da1b621c9b12d6c423a4100f3271d630e5f`
+- FDAT: `UDTRFIRM`, `0100`, model `0x32020010`, region 0
+
+Инвентари файлов с хешами — [docs/11-inventory.md](docs/11-inventory.md),
+`data/inventory/`.
+
 ## Структура
 
 ```
 docs/     разбор форматов (00–10)
 reports/  отчёт, итоги, выводы, уроки, правила, журнал находок
-tools/    axfs_extract, verify_tpzl, lzpt, pack_lzpt, build_fw
-data/     карта функций DSP (23 088) и 256 сигнатур
+tools/    axfs_extract, verify_tpzl, lzpt, pack_lzpt, build_fw,
+          repack_test, make_test_fdat
+data/     карта функций DSP (23 088), 256 сигнатур, инвентари с хешами
 ```
 
 ## Что разобрано
